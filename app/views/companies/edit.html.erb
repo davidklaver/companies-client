@@ -1,0 +1,10 @@
+<h1>Here's a form to edit your company:</h1>
+<%= form_tag "/companies/#{@company.id}", method: :patch do %>
+	<p><%= label_tag :name %>
+	<%= text_field_tag :name, @company.name %></p>
+	<p><%= label_tag :slogan %>
+	<%= text_field_tag :slogan, @company.slogan %></p>
+	<p><%= label_tag :phone %>
+	<%= text_field_tag :phone, @company.phone %></p>
+	<p><%= submit_tag 'Update Company' %></p>
+<% end %>

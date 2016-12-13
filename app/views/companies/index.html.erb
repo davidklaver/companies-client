@@ -1,0 +1,6 @@
+<h1>Here's all da companies:</h1>
+<% @companies.each do |company| %>
+<h2><a href="/companies/<%= company.id %>"><%= company.name %></a></h2>
+<p><%= company.slogan %></p>
+<p><%= company.phone %></p>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Here's the company you selected:</h1>
+<p><%= @company.name %></p>
+<p><%= @company.slogan %></p>
+<p><%= @company.phone %></p>
+
+<%= button_to "Edit this company", "/companies/#{@company.id}/edit", method: :get %>
+<%= button_to "Delete this company", "/companies/#{@company.id}", method: :delete %>
