@@ -11,7 +11,7 @@ class Company
 		companies_hash_array = Unirest.get("http://localhost:3001/companies",headers:{
 				"Accept" => "application/json",
 				"Authorization" => "Token token=#{ENV['USER_API_KEY']}",
-				"X-User-Email" => "davidjklaver@gmail.com" 
+				"X-User-Email" => "#{ENV['EMAIL']}" 
 			}
 		).body
 		companies = []
@@ -30,7 +30,7 @@ class Company
 		company_hash = Unirest.get("http://localhost:3001/companies/#{input_id}",headers:{
 				"Accept" => "application/json",
 				"Authorization" => "Token token=#{ENV['USER_API_KEY']}",
-				"X-User-Email" => "davidjklaver@gmail.com" 
+				"X-User-Email" => "#{ENV['EMAIL']}" 
 			}).body
 
 		company = Company.new(
@@ -47,7 +47,7 @@ class Company
 			"http://localhost:3001/companies",headers:{
 				"Accept" => "application/json",
 				"Authorization" => "Token token=#{ENV['USER_API_KEY']}",
-				"X-User-Email" => "davidjklaver@gmail.com" 
+				"X-User-Email" => "#{ENV['EMAIL']}" 
 			}, 
       parameters:{ 
       	:name => parameters[:name], 
@@ -70,7 +70,7 @@ class Company
 			headers:{
 				"Accept" => "application/json",
 				"Authorization" => "Token token=#{ENV['USER_API_KEY']}",
-				"X-User-Email" => "davidjklaver@gmail.com" 
+				"X-User-Email" => "#{ENV['EMAIL']}" 
 			}, 
       parameters:{ 
       	:name => parameters[:name], 
@@ -86,7 +86,7 @@ class Company
 		Unirest.delete("http://localhost:3001/companies/#{id}",headers:{
 				"Accept" => "application/json",
 				"Authorization" => "Token token=#{ENV['USER_API_KEY']}",
-				"X-User-Email" => "davidjklaver@gmail.com" 
+				"X-User-Email" => "#{ENV['EMAIL']}" 
 			})
 	end
 end
